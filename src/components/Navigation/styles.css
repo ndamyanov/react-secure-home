@@ -8,3 +8,23 @@
     font-size: calc(10px + 2vmin);
     color: white;
   }
+
+  .nav-ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+  }
+
+  .nav-ul>li {
+      padding: 1rem;
+      color: white;
+  }
+
+  .nav-ul>li>a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-ul>li>a:hover {
+  color: rgb(104, 230, 230);
+}

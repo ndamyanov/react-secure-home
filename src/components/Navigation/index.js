@@ -5,7 +5,7 @@ import './styles.css';
 
 const Navigation = () => (
   <header className="App-header">
-    <ul>
+    <ul className="nav-ul">
       <li>
         <Link to={ROUTES.SIGN_IN}>Sign In</Link>
       </li>
