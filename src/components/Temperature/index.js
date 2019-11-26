@@ -1,50 +1,42 @@
 import React, { Component } from 'react';
-//import  { FirebaseContext } from '../Firebase';
-//import temperatures from '../Firebase/firebase';
-import { connect } from "react-redux";
+import { withFirebase } from '../Firebase';
 
 class Temperature extends Component {
-     constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
+    this.state = {
+      temps: [],
+    };
+  }
+        componentDidMount() {
+          this.props.firebase.users().on('value', snapshot => {
+            const tempsObject = snapshot.val();
+            debugger;
+            const tempsList = Object.values(tempsObject).map(val => ({
+              ...tempsObject[val],
+              value: val,
+            }));
+            debugger;
+            this.setState({
+              temps: tempsList,
+            });
+          });
         }
 
-//  componentDidMount = () => {
-//    // console.log(this.props.firebase.temperatures());
-//     this.props.firebase.temperatures().on('value', snapshot => {
-//        console.log(snapshot.val())
-//        debugger;
-//     });
-//  }
+        componentWillUnmount() {
+          debugger;
+          this.props.firebase.users().off();
+        }
+
        render() {
-      return(
-              <div>tgefew{this.state.temperature}</div>
-        // <FirebaseContext.Consumer>
-        //     {firebase => {
-        //             firebase.temperatures().on('value', snapshot => {
-        //              const res = snapshot.val();
-        //               //console.log(JSON.stringify(res));
-        //               debugger;
-        //               let mappedTemperatures = Object.values(res).map((val) => {
-        //                 return Object.assign({ temp: val }, res[val]);
-        //                  })
-        //                 console.log(mappedTemperatures);
-        //                  mappedTemperatures.map(temp => {
-        //                          console.log(temp)
-        //                          console.log(temp.temp)
-        //                  return <div>The temperature from Firebase is.</div>;
-        //                  })
-        //                   //return <div>The temperature from Firebase is {this.state.temperature}.</div>;
-        //             })
-            
-        //     }}
-        // </FirebaseContext.Consumer>
-      );
+         debugger;
+         let tems = this.state.temps.map(temp => {
+          return <div>The temperature from Firebase is {temp.value}.</div>
+         })
+              return(
+                 tems
+              );
    } 
 }
 
-
-     const mapStateToProps = state => {
-  return { temperature: state };
-  };
-
-export default connect(mapStateToProps)(Temperature);
+export default withFirebase(Temperature);

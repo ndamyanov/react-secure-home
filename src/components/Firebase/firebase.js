@@ -1,12 +1,5 @@
-
-import React, { Component } from 'react';
-import store from '../../redux/actions.js';
-import { connect } from "react-redux";
 import app from 'firebase/app';
-import 'firebase/database';
-import { changeTemp } from '../../redux/actions.js';
-
-//const temperatures = () => this.db.ref(`home-77c1d/Temp1`);
+import database from 'firebase/database';
 
 const config = {
     apiKey: "AIzaSyDmYWwrm_u0hna8XsGE8Nko-8adExq7kYA",
@@ -19,31 +12,11 @@ const config = {
     //measurementId: "G-0ZXKPWWTD1"
 };
 
-class Firebase extends Component {
-  constructor(props) {
-    super(props);
-
+class Firebase {
+  constructor() {
     app.initializeApp(config);
     this.db = app.database();
-    let ref = Firebase.database().ref('/');
-    ref.on('value', snapshot => {
-      const state = snapshot.val();
-      console.log(state);
-      debugger;
-      props.handleTempChange(state);
-    })
   }
+  users = () => this.db.ref('Temp3');
 }
-
-function mapDispatchToProps(dispatch) {
-  return {
-    handleTempChange: store => dispatch(changeTemp(store))
-  }
-}
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Firebase);
-
-//export default Firebase;
+export default Firebase;
