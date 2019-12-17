@@ -8,34 +8,35 @@ class Temperature extends Component {
       temps: [],
     };
   }
-        componentDidMount() {
-          this.props.firebase.users().on('value', snapshot => {
-            const tempsObject = snapshot.val();
-            debugger;
-            const tempsList = Object.values(tempsObject).map(val => ({
-              ...tempsObject[val],
-              value: val,
-            }));
-            debugger;
-            this.setState({
-              temps: tempsList,
-            });
-          });
-        }
 
-        componentWillUnmount() {
-          debugger;
-          this.props.firebase.users().off();
-        }
+  componentDidMount() {
+    this.props.firebase.users().on('value', snapshot => {
+      const tempsObject = snapshot.val();
+      debugger;
+      const tempsList = Object.values(tempsObject).map(val => ({
+        ...tempsObject[val],
+        value: val,
+      }));
+      debugger;
+      this.setState({
+        temps: tempsList,
+      });
+    });
+  }
 
-       render() {
-         debugger;
-         let tems = this.state.temps.map(temp => {
-          return <div>The temperature from Firebase is {temp.value}.</div>
-         })
-              return(
-                 tems
-              );
+  componentWillUnmount() {
+    debugger;
+    this.props.firebase.users().off();
+  }
+
+  render() {
+    debugger;
+    let tems = this.state.temps.map(temp => {
+      return <div>The temperature from Firebase is {temp.value}.</div>
+    })
+    return(
+        tems
+    );
    } 
 }
 
