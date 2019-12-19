@@ -17,6 +17,7 @@ class Firebase {
     app.initializeApp(config);
     this.db = app.database();
   }
-  users = () => this.db.ref('Temp3');
+  tempHistory = () => this.db.ref('Data');
+  light = () =>  this.db.ref('Light');
 }
 export default Firebase;
