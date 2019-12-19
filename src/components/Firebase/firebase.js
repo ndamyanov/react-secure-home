@@ -1,4 +1,5 @@
 import app from 'firebase/app';
+import * as firebase from 'firebase';
 import database from 'firebase/database';
 
 const config = {
@@ -16,6 +17,7 @@ class Firebase {
   constructor() {
     app.initializeApp(config);
     this.db = app.database();
+    this.googleAuthProvider = new firebase.auth.GoogleAuthProvider();
   }
   tempHistory = () => this.db.ref('Data');
   light = () =>  this.db.ref('Light');
