@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Temperature from './components/Temperature';
+import Light from './components/Light';
 import SignInPage from './components/SignIn/SignInPage';
 import * as ROUTES from './constants/routes';
 
@@ -9,6 +10,7 @@ const Routes = () => {
       <Switch>
         <Route exact path={ROUTES.LANDING} component={Temperature} />
         <Route exact path={ROUTES.SIGN_IN} render={() => <SignInPage />} />
+        <Route path={ROUTES.LIGHT} component={Light} />
       </Switch>
       //   <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         //   <Route path={ROUTES.SIGN_IN} component={SignInPage} />

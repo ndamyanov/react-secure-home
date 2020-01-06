@@ -1,6 +1,6 @@
 import app from 'firebase/app';
-import * as firebase from 'firebase';
 import database from 'firebase/database';
+import * as firebase from 'firebase';
 
 const config = {
     apiKey: "AIzaSyDmYWwrm_u0hna8XsGE8Nko-8adExq7kYA",
@@ -25,7 +25,9 @@ class Firebase {
     this.signIn = this.signIn.bind(this);
     this.signOut = this.signOut.bind(this);
   }
-  users = () => this.db.ref('Data');
+
+  tempHistory = () => this.db.ref('Data');
+  light = () =>  this.db.ref('Light');
 
   createUser(email, password) {
     this.auth.createUserWithEmailAndPassword(email, password);
@@ -41,5 +43,3 @@ class Firebase {
 }
 
 export default Firebase;
-// export { firebase, Firebase as default };
-// export { firebase };
