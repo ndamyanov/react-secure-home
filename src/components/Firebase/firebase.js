@@ -30,16 +30,17 @@ class Firebase {
   tempHistory = () => this.db.ref('Data');
   light = () =>  this.db.ref('Light');
 
-  createUser(email, password) {
-    this.auth.createUserWithEmailAndPassword(email, password);
+  SignIn(email, password) {
+    return this.auth.signInWithEmailAndPassword(email, password);
   }
 
-  signIn(email, password) {
-    this.auth.signInWithEmailAndPassword(email, password);
-  }
+  // SignIn = (email, password) =>
+  //   this.auth.signInWithEmailAndPassword(email, password);
 
-  signOut() {
-    this.auth.signOut();
+  // SignOut = () => this.auth.signOut();
+
+  SignOut() {
+    return this.auth.signOut();
   }
 }
 

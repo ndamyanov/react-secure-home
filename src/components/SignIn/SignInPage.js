@@ -29,7 +29,7 @@ class SignInPage extends Component {
     onSubmit(event) {
         const { email, password } = this.state;
         this.props.firebase
-          .signIn(email, password)
+          .SignIn(email, password)
           .then(() => {
             this.setState({ ...this.state });
             this.props.history.push(ROUTES.HOME);
