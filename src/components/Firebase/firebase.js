@@ -1,4 +1,5 @@
 import app from 'firebase/app';
+import 'firebase/auth';
 import database from 'firebase/database';
 import * as firebase from 'firebase';
 
@@ -21,9 +22,9 @@ class Firebase {
     
     this.auth = app.auth();
 
-    this.createUser = this.createUser.bind(this);
-    this.signIn = this.signIn.bind(this);
-    this.signOut = this.signOut.bind(this);
+    // this.createUser = this.createUser.bind(this);
+    // this.signIn = this.signIn.bind(this);
+    // this.signOut = this.signOut.bind(this);
   }
 
   tempHistory = () => this.db.ref('Data');
