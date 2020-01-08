@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Temperature from './components/Temperature';
 import Light from './components/Light';
-import SignInPage from './components/SignIn/SignInPage';
+import SignInPage from './components/SignIn';
 import * as ROUTES from './constants/routes';
 
 const Routes = () => {

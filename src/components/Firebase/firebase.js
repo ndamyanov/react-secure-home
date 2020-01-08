@@ -22,9 +22,8 @@ class Firebase {
     
     this.auth = app.auth();
 
-    // this.createUser = this.createUser.bind(this);
-    // this.signIn = this.signIn.bind(this);
-    // this.signOut = this.signOut.bind(this);
+    this.SignIn = this.SignIn.bind(this);
+    this.SignOut = this.SignOut.bind(this);
   }
 
   tempHistory = () => this.db.ref('Data');
