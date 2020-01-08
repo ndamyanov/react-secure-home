@@ -28,3 +28,16 @@
 .nav-ul>li>a:hover {
   color: rgb(104, 230, 230);
 }
+
+.SignOutBtn {
+  background: none;
+  border: 0;
+  outline: 0;
+  font-size: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+.SignOutBtn:hover {
+  color: rgb(104, 230, 230);
+}
