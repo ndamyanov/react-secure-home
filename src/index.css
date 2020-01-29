@@ -135,6 +135,15 @@ h2 { color: #CCC; }
   -webkit-box-shadow: inset 0px -10px 14px -7px rgba(10,30,60,0.1);
 }
 
+.clickme {
+  font-family: 'BeautifulHeart';
+  font-size: 50px;
+  position: absolute;
+  display: flex;
+  left: 46%;
+  z-index: 10;
+  bottom: 5em;
+}
 #base { position:relative; z-index: 2; }
 
 .screw-top {
