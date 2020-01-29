@@ -9,7 +9,7 @@ const Routes = () => {
     return (
       <Switch>
         <Route exact path={ROUTES.LANDING} component={Temperature} />
-        <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
+        <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.LIGHT} component={Light} />
       </Switch>
         // <Route path={ROUTES.SIGN_UP} component={SignUpPage} />

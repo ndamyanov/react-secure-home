@@ -7,7 +7,6 @@ import * as ROUTES from '../../constants/routes';
 
 const SignInMarkup = () => (
     <div>
-        <h1>SignIn</h1>
         <SignInForm />
     </div>
 )
@@ -49,7 +48,9 @@ class SignInPage extends Component {
         const isInvalid = password === '' || email === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
+            <div id="login">
+              <form onSubmit={this.onSubmit}>
+                <h4>Account Login</h4>
                 <input
                     name="email"
                     value={email}
@@ -69,6 +70,7 @@ class SignInPage extends Component {
                 </button>
                 {error && <p>{error.message}</p>}
             </form>
+            </div>
         )
     }
 }

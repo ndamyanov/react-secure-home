@@ -9,3 +9,31 @@
 .App-link {
   color: #09d3ac;
 }
+
+#login {
+  align-content: center;
+  background-color: #282c34;
+  width: 20%;
+  margin: 0 auto;
+  border-radius: 0.5em;
+}
+
+#login form{
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+#login form h4{
+ color: white;
+}
+
+#login form input{
+  height: 2.5em;
+  text-indent: 1em;
+}
+
+#login form button{
+  margin: 1em 0;
+  height: 2.5em;
+}
