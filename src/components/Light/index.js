@@ -36,6 +36,7 @@ render() {
           <div className="bulb-middle-2"></div>
           <div className="bulb-middle-3"></div>
           <div className="bulb-bottom"></div>
+          <h3 className="clickme">Click me</h3>
         </div>
           
         <div id="base">
