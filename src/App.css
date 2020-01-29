@@ -10,6 +10,12 @@
   color: #09d3ac;
 }
 
+body {
+  background-image: url("assets/shome.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
 #login {
   align-content: center;
   background-color: #282c34;
