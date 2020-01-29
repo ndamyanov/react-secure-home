@@ -13,7 +13,7 @@
 body {
   background-image: url("assets/shome.jpg");
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
 
 #login {
@@ -42,4 +42,11 @@ body {
 #login form button{
   margin: 1em 0;
   height: 2.5em;
+}
+
+.temperature-wrapper {
+  background-color: #0398fc;
+  border-radius: 30px;
+  opacity: 0.8;
+  color: #fff;
 }

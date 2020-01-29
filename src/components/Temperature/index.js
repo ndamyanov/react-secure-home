@@ -6,6 +6,7 @@ class Temperature extends Component {
     super(props);
     this.state = {
       temperatureHistoryLogs: [],
+      isLoading: true
     };
   }
         componentDidMount() {
@@ -28,13 +29,28 @@ class Temperature extends Component {
 
        render() {
          let logs = this.state.temperatureHistoryLogs.map(temp => {
+          const values = temp.value.split('/-');
+          const [day, humidity, tempLiving, tempBedroom, tempOut] = values;
+          const [weekDay, time] = day.split(' ');
+          
+          return  (
+            <div className="temperature-wrapper">
+              <h4>Temperature for {weekDay}, {time} :</h4>
+              <p>Humidity: {humidity}</p>
+              <p>Temperature in the living room is: {tempLiving}</p>
+              <p>Temperature in the bedroom is: {tempBedroom}</p>
+              <p>Temperature outside is: {tempOut}</p>
+            </div>
+          )
            //let delimeter = "/";
            //let test = JSON.stringify(temp);
            //let index = temp.value.toString().indexOf(delimeter);
-          return <div>{temp.value}.</div>
+          // return <div>{temp.value}.</div>
          })
               return(
-                 logs
+                <div className="logs">
+                  {logs}
+                </div>
               );
    } 
 }
