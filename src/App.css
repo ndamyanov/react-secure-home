@@ -61,3 +61,9 @@ body {
   opacity: 0.8;
   color: #fff;
 }
+
+@media (max-width: 575.98px) {
+  .logs {
+    width: 90%;
+  }
+}
