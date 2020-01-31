@@ -19,6 +19,7 @@ body {
   background-image: url("assets/shome.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 #login {
@@ -49,7 +50,12 @@ body {
   height: 2.5em;
 }
 
-.temperature-wrapper {
+.logs {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.temperature-content {
   background-color: #0398fc;
   border-radius: 30px;
   opacity: 0.8;

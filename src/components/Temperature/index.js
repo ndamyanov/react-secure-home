@@ -35,11 +35,13 @@ class Temperature extends Component {
           
           return  (
             <div className="temperature-wrapper">
-              <h4>Temperature for {weekDay}, {time} :</h4>
-              <p>Humidity: {humidity}</p>
-              <p>Temperature in the living room is: {tempLiving}</p>
-              <p>Temperature in the bedroom is: {tempBedroom}</p>
-              <p>Temperature outside is: {tempOut}</p>
+              <div className="temperature-content">
+                <h4>Temperature for {weekDay}, {time} :</h4>
+                <p>Humidity: {humidity}</p>
+                <p>Temperature in the living room is: {tempLiving}</p>
+                <p>Temperature in the bedroom is: {tempBedroom}</p>
+                <p>Temperature outside is: {tempOut}</p>
+              </div>
             </div>
           )
            //let delimeter = "/";
