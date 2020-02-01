@@ -63,7 +63,7 @@ body {
 }
 
 @media (max-width: 575.98px) {
-  .logs {
+  .logs, #login {
     width: 90%;
   }
 }
