@@ -28,13 +28,13 @@ class Temperature extends Component {
         }
 
        render() {
-         let logs = this.state.temperatureHistoryLogs.map(temp => {
+         let logs = this.state.temperatureHistoryLogs.map((temp, i) => {
           const values = temp.value.split('/-');
           const [day, humidity, tempLiving, tempBedroom, tempOut] = values;
           const [weekDay, time] = day.split(' ');
           
           return  (
-            <div className="temperature-wrapper">
+            <div className="temperature-wrapper" key={`temp${i}`}>
               <div className="temperature-content">
                 <h4>Temperature for {weekDay}, {time} :</h4>
                 <p>Humidity: {humidity}</p>
