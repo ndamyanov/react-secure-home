@@ -41,3 +41,13 @@
 .SignOutBtn:hover {
   color: rgb(104, 230, 230);
 }
+
+@media (max-width: 575.98px) {
+  .nav-ul {
+    flex-direction: column;
+  }
+
+  .nav-ul > li {
+    padding: 0.5rem;
+  }
+}
