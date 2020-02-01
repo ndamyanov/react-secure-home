@@ -18,16 +18,24 @@ class Temperature extends Component {
             }));
             this.setState({
               temperatureHistoryLogs: tempsList,
-            });
+            }, () => this.setState({isLoading: false}));
           });
         }
 
         componentWillUnmount() {
-          debugger;
+          // debugger;
           this.props.firebase.tempHistory().off();
         }
 
        render() {
+         const spinner = <div class="spinner">
+         <div class="rect1"></div>
+         <div class="rect2"></div>
+         <div class="rect3"></div>
+         <div class="rect4"></div>
+         <div class="rect5"></div>
+       </div>
+
          let logs = this.state.temperatureHistoryLogs.map((temp, i) => {
           const values = temp.value.split('/-');
           const [day, humidity, tempLiving, tempBedroom, tempOut] = values;
@@ -49,11 +57,12 @@ class Temperature extends Component {
            //let index = temp.value.toString().indexOf(delimeter);
           // return <div>{temp.value}.</div>
          })
-              return(
-                <div className="logs">
-                  {logs}
-                </div>
-              );
+
+          return(
+            this.state.isLoading 
+              ? spinner
+              : <div className="logs">{logs}</div>
+          );
    } 
 }
 
