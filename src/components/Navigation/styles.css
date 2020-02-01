@@ -45,9 +45,16 @@
 @media (max-width: 575.98px) {
   .nav-ul {
     flex-direction: column;
+    padding: 0;
   }
 
   .nav-ul > li {
     padding: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .temperature-content {
+    border-radius: 15px;
   }
 }
