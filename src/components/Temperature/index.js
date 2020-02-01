@@ -28,13 +28,13 @@ class Temperature extends Component {
         }
 
        render() {
-         const spinner = <div class="spinner">
-         <div class="rect1"></div>
-         <div class="rect2"></div>
-         <div class="rect3"></div>
-         <div class="rect4"></div>
-         <div class="rect5"></div>
-       </div>
+         const loading = <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
 
          let logs = this.state.temperatureHistoryLogs.map((temp, i) => {
           const values = temp.value.split('/-');
@@ -60,7 +60,7 @@ class Temperature extends Component {
 
           return(
             this.state.isLoading 
-              ? spinner
+              ? loading
               : <div className="logs">{logs}</div>
           );
    } 
