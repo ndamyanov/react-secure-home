@@ -8,7 +8,7 @@ import * as ROUTES from './constants/routes';
 const Routes = () => {
     return (
       <Switch>
-        <Route exact path={ROUTES.LANDING} component={Temperature} />
+        <Route exact path={ROUTES.TEMP} component={Temperature} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.LIGHT} component={Light} />
       </Switch>

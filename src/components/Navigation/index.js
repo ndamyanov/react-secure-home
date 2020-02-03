@@ -2,17 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
+import { AuthUserContext } from '../Session';
 import './styles.css';
 
-const Navigation = () => (
+const Navigation = ({authUser}) => (
   <header className="App-header">
-    <ul className="nav-ul">
-      <li>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.LANDING}>Landing</Link>
-      </li>
+     <div>
+       <AuthUserContext.Consumer>
+      {authUser =>
+        authUser ? <NavigationAuth /> : <NavigationNonAuth />
+      }
+    </AuthUserContext.Consumer>
+    </div>
+  </header>
+);
+
+const NavigationAuth = () => (
+  <ul className="nav-ul">
       <li>
         <Link to={ROUTES.HOME}>Home</Link>
       </li>
@@ -26,9 +32,22 @@ const Navigation = () => (
         <Link to={ROUTES.LIGHT}>Light</Link>
       </li>
       <li>
+        <Link to={ROUTES.TEMP}>Temperature</Link>
+      </li>
+      <li>
         <SignOutButton />
       </li>
     </ul>
-  </header>
-);
+)
+
+const NavigationNonAuth = () => (
+  <ul className="nav-ul">
+    <li>
+      <Link to={ROUTES.HOME}>Home</Link>
+    </li>
+    <li>
+      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+    </li>
+  </ul>
+)
 export default Navigation;
